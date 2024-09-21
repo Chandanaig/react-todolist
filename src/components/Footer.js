@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 
-function Footer({ addTask }) {
+function Footer() {
   const [taskName, setTaskName] = useState('');
+
+  const addTask = (name) => {
+    console.log('Task added:', name); // Replace this with your logic to add the task
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTask(taskName);
-    setTaskName('');
+    if (taskName) {
+      addTask(taskName);
+      setTaskName('');
+    }
   };
 
   return (
