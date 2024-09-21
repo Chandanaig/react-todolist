@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const headerStyle = {
+    padding: "20px",
+    backgroundColor: "#282c34",
+    color: "white",
+    textAlign: "center",
+  };
+
+  const bodyStyle = {
+    padding: "500px",
+    textAlign: "center",
+  };
+
+  const footerStyle = {
+    padding: "20px",
+    backgroundColor: "#282c34",
+    color: "white",
+    textAlign: "center",
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header style={headerStyle}>
+        <h1>header</h1>
       </header>
+      <main style={bodyStyle}>
+        <h2>Welcome to my app!</h2>
+        <p>
+          This is a simple React application with a header, body, and footer.
+        </p>
+      </main>
+      <footer style={footerStyle}>
+        <p>© 2024 My Simple App</p>
+      </footer>
     </div>
   );
 }
