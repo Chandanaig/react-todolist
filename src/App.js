@@ -27,13 +27,12 @@ function App() {
         <h1>header</h1>
       </header>
       <main style={bodyStyle}>
-        <h2>Welcome to my app!</h2>
-        <p>
-          This is a simple React application with a header, body, and footer.
-        </p>
+        <h1>
+          Body
+        </h1>
       </main>
       <footer style={footerStyle}>
-        <p>© 2024 My Simple App</p>
+        <h1>footer</h1>
       </footer>
     </div>
   );
