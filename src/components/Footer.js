@@ -9,8 +9,7 @@ function Footer({ addTask, tasks, setTasks }) {
       addTask(taskName);
       setTaskName("");
     }
-  };
-
+  }
  
   return (
     <footer className="footer">
