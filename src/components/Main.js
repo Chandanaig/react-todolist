@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Main({ tasks, handleTaskChange }) {
-  const incompleteTasks = tasks.filter(task => !task.completed);
+  const [filter, setFilter] = useState("all");
+
+  const filteredTasks = tasks.filter(task => {
+    if (filter === "completed") return task.completed;
+    if (filter === "incomplete") return !task.completed;
+    return true; // Show all tasks
+  });
 
   return (
     <main className="main">
-      <button onClick={() => console.log("Completed task button clicked")}>
-        Completed task
-      </button>
-      <button onClick={() => console.log("Incompleted task button clicked")}>Incomplete task
-        </button>
-
-      <h4>List</h4>
-      {incompleteTasks.map((task) => (
+      <div className="filter">
+        <button onClick={() => setFilter("all")}>All</button>
+        <button onClick={() => setFilter("completed")}>Completed</button>
+        <button onClick={() => setFilter("incomplete")}>Incomplete</button>
+      </div>
+      {filteredTasks.map((task) => (
         <div key={task.id}>
           <input
             type="checkbox"
